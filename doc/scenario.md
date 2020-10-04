@@ -1,30 +1,18 @@
 **Table of Contents**
   1. [Overview](./readme.md)
-  2. [Assessment Criteria](./criteria.md)
-  3. [Scenario](./scenario.md)
-  4. [Project Instructions (100 Points)](./project-instructions.md)
-  5. [Setup Instructions (300 Points)](./setup-instructions.md)
-  6. [Software Instructions (600 Points)](./software-instructions.md)
-  7. [Submission](./submission.md)
+  2. [Scenario](./scenario.md)
+  3. [Setup Instructions](./setup-instructions.md)
+  4. [Software Instructions](./software-instructions.md)
 
 ---
 <br/>
 <br/>
 
+![Gerald_Img]
+
 # Scenario
 
 Gerlad, our favorite contractor, has asked for a new application; it's very similar to other applications that he has had written.
-
-## Continuity
-
-The prior assignments 1-3 lead up to this final, and the scenario's throughout those assignment still apply unless specifically overridden in this scenario. You will be marked on the execution of this final, but should some requirements not be clear, refer to the prior assignments for your answer.
-
-**NOTE: These go to external links!**
-
-  - [Assignment 1](./DevelopingSoftwareIntroduction-Assignment1.pdf)
-  - [Assignment 2](https://github.com/Focus-College/developing-software-intro-assignment-2/blob/master/assignment/scenario.md)
-  - [Assingment 3](https://github.com/Focus-College/developing-software-intro-assignment-3/blob/master/assignment/scenario.md)
-
 
 # Gerald's Needs
 
@@ -115,7 +103,12 @@ In this sample, you can see that Gerald needs the materials required seperate fr
   - outsideWallArea
   - insideWallArea
   - ceilingArea
-
+<br/>
 --- 
-[Previous: Assessment Criteria](./criteria.md) | 
-[Next: Project Instructions](./project-instructions.md)
+<br/>
+
+[Previous: Overview](./readme.md) | [Next: Setup Instructions](./setup-instructions.md)
+
+
+
+[Gerald_Img]: https://www.safetyandhealthmagazine.com/ext/resources/images/2016/04-april/construction-safety.jpg?1458739490

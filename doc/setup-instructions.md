@@ -148,6 +148,89 @@ npm run start:dev
 
 <br/>
 
+### *Automate Linting*
+
+#### *_Installation and setup_*
+
+* Run the following commands to setup [prettier] in your *TypeScript project*.
+
+```
+npm install --save-dev --save-exact prettier
+```
+
+* Then, create an empty config file to let editors and other tooling know you are using Prettier:
+
+```
+echo {}> .prettierrc.json
+```
+adding the following script to new **.prettierrc.json**
+
+```
+{
+    "tabWidth": 4,
+    "bracketSpacing": true
+}
+```
+* Next, create a .prettierignore file and add the following:
+```
+dist
+node_modules
+```
+
+* finally update the package.json to let pritter running.
+
+
+
+---
+
+
+## Running the Application
+
+
+To **build** the application
+```
+tsc
+```
+To **run** the application and only compile (without running [prettier] and  [ESLint] ) 
+
+```
+npm run start notest
+```
+or
+
+```
+npm run start:dev:notest
+```
+- This script will run:
+  - `npm run build`
+  - `npm run start`
+
+
+
+To **build & run** the application using npm and lint
+
+```
+npm run start:dev
+```
+
+- This script will run:  
+  - `npm run build:prettier`
+  - `npm run build:lint`
+  - `npm run start`
+
+---
+
+
+
+
+<br/>
+
+--- 
+
+<br/>
+
+
+
 [Previous: Scenario](./scenario.md) | [Next: Software Instructions](./software-instructions.md)
 
 
@@ -158,3 +241,5 @@ npm run start:dev
 [typescript]: https://www.typescriptlang.org/download
 
 [ESLint]: https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+
+[prettier]: https://prettier.io/docs/en/install.html

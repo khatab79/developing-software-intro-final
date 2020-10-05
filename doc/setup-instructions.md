@@ -218,9 +218,107 @@ npm run start:dev
   - `npm run build:lint`
   - `npm run start`
 
+<br/>
+
+--- 
+
+<br/>
+
+
+### *4. Adding [testing] (mocha and chai) to the project*
+
+#### *_Installation and setup_*
+
+* Run the following commands to setup [testing] in your *TypeScript project*.
+
+```
+npm install chai mocha ts-node @types/chai @types/mocha --save-dev
+```
+
+* add new folder to the project named **tests**
+* add new file **hello.spec.ts** under folder **test**
+* add new file for hello function under **src** 
+* write the following to each files:
+
+1. hello function
+```
+export function sayHello(name: string) {
+    return `Hello ${name}`;
+}
+```
+
+2. index
+
+```
+//basic function to console hello world
+import { sayHello } from "./hello";
+
+
+//call sayHello
+const world = "world";
+sayHello(world);
+
+```
+3. hello.spec.ts
+
+```
+import { sayHello } from "../src/hello";
+import { expect } from "chai";
+import "mocha";
+
+//here the test condtion either its pass pr not.
+describe("sayHello function", () => {
+    it("should return Hello khatab", () => {
+        const result = sayHello("khatab");
+        console.log(result);
+        expect(result).to.equal("Hello khatab");
+    });
+});
+
+```
+
+* finally update the package.json to let test running.
+
+
+
+
 ---
 
 
+## Running the Application
+
+
+To **build** the application
+```
+tsc
+```
+To **run** the application and only compile (without running [testing], [prettier] and  [ESLint] ) 
+
+```
+npm run start notest
+```
+or
+
+```
+npm run start:dev:notest
+```
+- This script will run:
+  - `npm run build`
+  - `npm run start`
+
+
+
+To **build & run** the application using npm and lint
+
+```
+npm run start:dev
+```
+
+- This script will run:  
+  - `npm run build:test`
+  - `npm run build:prettier`
+  - `npm run build:lint`
+  - `npm run start`
 
 
 <br/>
@@ -243,3 +341,5 @@ npm run start:dev
 [ESLint]: https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
 
 [prettier]: https://prettier.io/docs/en/install.html
+
+[testing]: https://journal.artfuldev.com/unit-testing-node-applications-with-typescript-using-mocha-and-chai-384ef05f32b2

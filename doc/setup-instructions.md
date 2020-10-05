@@ -328,6 +328,86 @@ npm run start:dev
 <br/>
 
 
+### *5. Adding [nyc]  (Istanbul) to the project*
+
+#### *_Installation and setup_*
+
+* Run the following commands to setup [nyc] in your *TypeScript project*.
+
+```
+npm i -D nyc
+```
+then for istanbul 
+```
+npm install @istanbuljs/nyc-config-typescript
+```
+
+* create .nycrc.json :
+```
+{
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": true,
+    "reporter": ["text","html"],
+    "branches": 30,
+    "lines": 30,
+    "functions": 30,
+    "statements": 30,
+    "include": ["src/**/*.ts"],
+    "exclude": ["src/index.ts"]
+
+}
+
+```
+
+* add `.nyc_output` and `
+coverage` to all ignore files.
+
+* finally update the package.json to let test nyc running.
+
+---
+## Running the Application
+
+
+To **build** the application
+```
+tsc
+```
+To **run** the application and only compile (without running [nyc] istanbul testing, [prettier] and  [ESLint] ) 
+
+```
+npm run start notest
+```
+or
+
+```
+npm run start:dev:notest
+```
+- This script will run:
+  - `npm run build`
+  - `npm run start`
+
+
+
+To **build & run** the application using npm and lint
+
+```
+npm run start:dev
+```
+
+- This script will run:  
+  - `npm run build:test`
+  - `npm run build:prettier`
+  - `npm run build:lint`
+  - `npm run start`
+
+
+<br/>
+
+--- 
+
+<br/>
+
 
 [Previous: Scenario](./scenario.md) | [Next: Software Instructions](./software-instructions.md)
 
@@ -343,3 +423,5 @@ npm run start:dev
 [prettier]: https://prettier.io/docs/en/install.html
 
 [testing]: https://journal.artfuldev.com/unit-testing-node-applications-with-typescript-using-mocha-and-chai-384ef05f32b2
+
+[nyc]: https://www.npmjs.com/package/nyc

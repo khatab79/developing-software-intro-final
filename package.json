@@ -1,6 +1,6 @@
 {
   "name": "acsd-final-khatab",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Developing Software Introduction Final Assessment",
   "main": "index.js",
   "scripts": {
@@ -8,8 +8,8 @@
     "prestart": "tsc",
     "poststart": "echo \"All done! \" ",
     "prestart:dev": "npm run build",
-    "start:dev": "npm run start",
-    "start:dev:notest": "npm run build:compile && npm run start",
+    "start:dev": "npm run start --",
+    "start:dev:notest": "npm run build:compile && npm run start --",
     "build": "npm run build:lint && npm run build:prettier && npm run build:test && npm run build:compile",
     "build:compile": "tsc",
     "build:lint": "eslint {tests,src}/**/*.ts --ext .ts --fix",
@@ -27,9 +27,10 @@
   },
   "homepage": "https://github.com/khatab79/developing-software-intro-final#readme",
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.3",
-    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/yargs": "^15.0.7",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
     "chai": "^4.2.0",
@@ -38,6 +39,7 @@
     "nyc": "^15.1.0",
     "prettier": "2.1.2",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "yargs": "^16.0.3"
   }
 }

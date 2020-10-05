@@ -4,5 +4,5 @@ function sayHello(name: string){
 } 
 
 //call sayHello
-let world = "world";
+const world = "world";
 sayHello(world);

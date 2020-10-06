@@ -1,7 +1,10 @@
 //import Arguments, Argv from yargs
 import { Arguments, Argv } from "yargs";
 
-export function calcHouseMaterials(yargs: Argv): void {
+import {calcHouseMaterials} from '../calculator/index'
+
+
+export function calcMaterials(yargs: Argv): void {
     // create a new yargs "command"
     yargs.command(
         // name the command with no spaces
@@ -47,7 +50,7 @@ export function calcHouseMaterials(yargs: Argv): void {
             }>
         ) {
             // calculate rquired wood for a house, accept uites in inches or feet
-            console.log(args.width, args.length, args.isFeet, args.name);
+            calcHouseMaterials(args.name, args.width, args.length, args.isFeet);
         }
     );
 }

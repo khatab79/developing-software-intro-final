@@ -2,13 +2,13 @@
 import yargs = require("yargs");
 
 //import funtion calcWoodNeeded
-import { calcHouseMaterials } from "./commands/calc-house-materials";
+import { calcMaterials } from "./commands/calc-house-materials";
 
 //import funtion findCustomerByName
 import { getHouseMaterials } from "./commands/get-house-materials";
 
 //to calculate total wood required ( studs, posts, plates )
-calcHouseMaterials(yargs);
+calcMaterials(yargs);
 
 //to recall prior house builds without knowing their dimensions
 getHouseMaterials(yargs);

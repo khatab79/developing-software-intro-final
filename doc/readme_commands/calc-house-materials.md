@@ -1,6 +1,8 @@
 
 [Return to Software Instructions](../software-instructions.md) 
 
+[Return to list](../../src/calculator/readme.md) 
+
 ## Usage
 This function takes Parameters ==> 
 

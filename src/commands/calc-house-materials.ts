@@ -1,8 +1,7 @@
 //import Arguments, Argv from yargs
 import { Arguments, Argv } from "yargs";
 
-import {calcHouseMaterials} from '../calculator/index'
-
+import { calcHouseMaterials } from "../calculator/index";
 
 export function calcMaterials(yargs: Argv): void {
     // create a new yargs "command"
@@ -49,8 +48,18 @@ export function calcMaterials(yargs: Argv): void {
                 name: string;
             }>
         ) {
-            // calculate rquired wood for a house, accept uites in inches or feet
-            calcHouseMaterials(args.name, args.width, args.length, args.isFeet);
+            try {
+                // calculate rquired wood for a house, accept uites in inches or feet
+                const houseMaterials = calcHouseMaterials(
+                    args.name,
+                    args.width,
+                    args.length,
+                    args.isFeet
+                );
+                console.log(houseMaterials);
+            } catch (error) {
+                console.error("error");
+            }
         }
     );
 }

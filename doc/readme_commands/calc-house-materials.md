@@ -11,7 +11,7 @@ length as number
 isFeet as boolean
 name   as string 
 
-and console.log to output the parameters passed.
+and return output customer details.
 
 ## Code of the function: 
 
@@ -73,19 +73,67 @@ export function calcHouseMaterials(yargs: Argv): void {
 ```
 ## Example of call 1
 ```
-npm run start -- calc-house-materials -w 50 -l 90 -i feet -n khatab
+npm run start -- calc-house-materials -w 100 -l 100 -i feet -n khatab
 ```
-## output
-
-`50 90 true Gerald`
 
 ## Example of call 2
 ```
-npm run start -- calc-house-materials -w 50 -l 90 -n khatab
+npm run start -- calc-house-materials -w 100 -l 100 -n khatab
 ```
 ## output
 
-`50 90 false Gerald`
+```Javascript
+{
+        name: "khatab",
+            "house": {
+                "width": 100,
+                "length": 100,
+                "outsideWallArea": 0,
+                "insideWallArea": 0,
+                "ceilingArea": 0
+            },
+            "materials": {
+                "lumber": {
+                    "2x4": 0,
+                    "4x4": 0
+                },
+                "plywood": {
+                    "4x8": 0
+                },
+                "drywall": {
+                    "4x8": 0
+                }
+            },
+            "waste": {
+                "lumber": {
+                    "2x4": 0,
+                    "4x4": 0
+                },
+                "plywood": {
+                    "4x8": 0
+                },
+                "drywall": {
+                    "4x8": 0
+                }
+            },
+            "purchase": {
+                "lumber": {
+                    "2x4": 0,
+                    "4x4": 0
+                },
+                "plywood": {
+                    "4x8": 0
+                },
+                "drywall": {
+                    "4x8": 0
+                }
+            }
+        }
+
+
+```
+
+
 
 <br/>
 <br/>

@@ -1,5 +1,6 @@
 [Return to Software Instructions](../software-instructions.md) 
 
+[Return to list](../../src/calculator/readme.md) 
 
 
 
@@ -22,7 +23,7 @@ export function getHouseMaterials(yargs: Argv): void {
 
         // define the parameters we need for our command
         {
-            search: {
+            name: {
                 type: "string",
                 alias: "n",
                 description: "customer name, -n",
@@ -32,10 +33,10 @@ export function getHouseMaterials(yargs: Argv): void {
         // define the function we want to run once the arguments are parsed
         function (
             args: Arguments<{
-                search: any;
+                name: any;
             }>
         ) {
-            console.log(args.search);
+            console.log(args.name);
         }
     );
 }

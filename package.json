@@ -1,19 +1,20 @@
 {
   "name": "acsd-final-khatab",
-  "version": "1.6.1",
+  "version": "1.7.2",
   "description": "Developing Software Introduction Final Assessment",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
     "prestart": "tsc",
-    "poststart": "echo \"All done! \" ",
+    "start": "node dist/index.js",
     "prestart:dev": "npm run build",
-    "start:dev": "npm run start --",
+    "poststart": "echo \"All done! \" ",
+    "start:dev": "node dist/index.js",
     "start:dev:notest": "npm run build:compile && npm run start --",
+
     "build": "npm run build:lint && npm run build:prettier && npm run build:test && npm run build:compile",
-    "build:compile": "tsc",
     "build:lint": "eslint {tests,src}/**/*.ts --ext .ts --fix",
     "build:prettier": "prettier --write {tests,src}/**/*.ts",
+    "build:compile": "tsc",
     "build:test": "nyc mocha -r ts-node/register tests/**/*.spec.ts"
   },
   "repository": {

@@ -10,3 +10,11 @@ This function takes two numbers (width, length),  string (name), boolean (units)
 
 [Read More](../../doc/readme_commands/calc-house-materials.md)
 
+
+
+getHouseMaterials( name: string)
+This function take string(name) and console.log to output the parameter passed. 
+
+[Read More](../../doc/readme_commands/get-house-materials.md)
+
+

@@ -1,6 +1,7 @@
 import { Arguments, Argv } from "yargs";
+import { getHouseMaterials } from "../calculator/index";
 
-export function getHouseMaterials(yargs: Argv): void {
+export function getMaterials(yargs: Argv): void {
     // create a new yargs "command"
     yargs.command(
         // name the command with no spaces
@@ -11,7 +12,7 @@ export function getHouseMaterials(yargs: Argv): void {
 
         // define the parameters we need for our command
         {
-            search: {
+            name: {
                 type: "string",
                 alias: "n",
                 description: "customer name, -n",
@@ -21,10 +22,16 @@ export function getHouseMaterials(yargs: Argv): void {
         // define the function we want to run once the arguments are parsed
         function (
             args: Arguments<{
-                search: any;
+                name: any;
             }>
         ) {
-            console.log(args.search);
+            try {
+                //get our customer's house material by name
+                const houseMaterials = getHouseMaterials(args.name);
+                console.log(houseMaterials);
+            } catch (error) {
+                console.error("error");
+            }
         }
     );
 }

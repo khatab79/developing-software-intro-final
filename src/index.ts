@@ -5,13 +5,13 @@ import yargs = require("yargs");
 import { calcMaterials } from "./commands/calc-house-materials";
 
 //import funtion findCustomerByName
-import { getHouseMaterials } from "./commands/get-house-materials";
+import { getMaterials } from "./commands/get-house-materials";
 
 //to calculate total wood required ( studs, posts, plates )
 calcMaterials(yargs);
 
 //to recall prior house builds without knowing their dimensions
-getHouseMaterials(yargs);
+getMaterials(yargs);
 
 // tell yargs to include the --help flag
 yargs.help();

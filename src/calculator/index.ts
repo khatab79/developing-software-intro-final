@@ -28,6 +28,10 @@ const LARGEST_WALL = 60;
 const SHEET_DRYWALL_long = 8;
 const SHEET_DRYWALL_width = 4;
 
+// 4x8 sheets of plywood
+const SHEET_PLYWOOD_long = 8;
+const SHEET_PLYWOOD_width = 4;
+
 export function calcHouseMaterials(
     name: string,
     width: number,
@@ -42,6 +46,8 @@ export function calcHouseMaterials(
 
     //calculate total purchase (woods required + waste)
     // Purchase =(calculation + waste);
+
+
 
     return {
         name,
@@ -183,6 +189,16 @@ function convertInchesToFeet(inches: number) {
     return inches / 12;
 }
 
+//this function takes width and length as parameters
+//and returns the number of sheets of plywood for a house
+//plywood to completely cover the exterior walls of the house.
+// 4x8 foot sheets of plywood
+export function calcPlywood(widthInInches: number, lengthInInches: number) {
+    return Math.ceil(
+        2 * (widthInInches / convertFeetToInches(SHEET_PLYWOOD_width) +
+            lengthInInches / convertFeetToInches(SHEET_PLYWOOD_width)));
+}
+
 // takes width and length as parameters
 // and returns the number of sheets of plywood for a house
 // He needs enough drywall to completely cover the interior walls of the house,
@@ -191,17 +207,16 @@ function convertInchesToFeet(inches: number) {
 // The largest wall he will build is 60 feet in length.
 // 4x8 sheets of drywall
 export function calcDrywall(widthInInches: number, lengthInInches: number) {
-    
     //calculate drywall for the interiorWall (2 sides)
     const draywallForInteriorWall =
         (widthInInches - BEAM_WIDTH * 2) /
-            convertFeetToInches(SHEET_DRYWALL_width) 
-      + (lengthInInches - BEAM_WIDTH * 2) /
+            convertFeetToInches(SHEET_DRYWALL_width) +
+        (lengthInInches - BEAM_WIDTH * 2) /
             convertFeetToInches(SHEET_DRYWALL_width);
 
     //calculate drywall for ceiling 2* (Width + Length), consider rectangle
     const draywallForCeiling =
-        2 * (widthInInches + lengthInInches) /
+        (2 * (widthInInches + lengthInInches)) /
         convertFeetToInches(SHEET_DRYWALL_width * SHEET_DRYWALL_long);
 
     // return calculation

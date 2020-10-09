@@ -4,7 +4,7 @@
 
 ## Usage
 takes width and length as parameters
-and returns the number of sheets of plywood for a house, to completely cover the interior walls of the house, and the ceiling
+and returns the number of sheets of drywall for a house, to completely cover the interior walls of the house, and the ceiling
 
 The smallest wall he will build is 4 feet in length.
 The largest wall he will build is 60 feet in length.
@@ -39,7 +39,7 @@ export function calcDrywall(widthInInches: number, lengthInInches: number) {
 ## test
 
 ```Javascript
-    import { expect } from "chai";
+import { expect } from "chai";
 import "mocha";
 
 import { calcDrywall } from ".././src/calculator/index";

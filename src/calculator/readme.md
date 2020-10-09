@@ -30,6 +30,12 @@ This function take number(widthInInches, lengthInInches) and return total number
 [Read More](../../doc/readme_commands/calcDrywall.md)
 
 
+calcPlywood(widthInInches: number, lengthInInches: number)
+This function take number(widthInInches, lengthInInches) and return total number of calcPlywood. 
+
+[Read More](../../doc/readme_commands/calcPlywood.md)
+
+
 
 
 

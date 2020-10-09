@@ -1,7 +1,7 @@
 //import Arguments, Argv from yargs
 import { Arguments, Argv } from "yargs";
 import { calcHouseMaterials } from "../calculator/index";
-import { outPut } from "../operations/showCustomer";
+import { outPut } from "../operations/showMaterials";
 
 export function calcMaterials(yargs: Argv): void {
     // create a new yargs "command"
@@ -57,16 +57,20 @@ export function calcMaterials(yargs: Argv): void {
                     args.isFeet
                 );
 
-                //organise the output to meet the specification requirement,
-                //by parsing un object later
+                // organise the output to meet the specification requirement,
+                // twoByFour  : number,
+                // fourByFour : number,
+                // plywood    : number,
+                // drywall    : number
 
-                // const output = outPut(
-                //     args.name,
-                //     args.width,
-                //     args.length,
-                // );
-                // console.log(output);
-                console.log(houseMaterials);
+                const output = outPut(
+                    houseMaterials.twoByFour,
+                    houseMaterials.fourByFour,
+                    houseMaterials.plywood,
+                    houseMaterials.drywall
+                );
+                console.log(output);
+
             } catch (error) {
                 console.error("error");
             }

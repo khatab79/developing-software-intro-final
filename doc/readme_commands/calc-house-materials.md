@@ -208,6 +208,22 @@ describe("calc house materials", () => {
 
 the output still not final version.
 
+```javascript
+// organise the output to meet the specification requirement,
+                // twoByFour  : number,
+                // fourByFour : number,
+                // plywood    : number,
+                // drywall    : number
+
+                const output = outPut(
+                    houseMaterials.twoByFour,
+                    houseMaterials.fourByFour,
+                    houseMaterials.plywood,
+                    houseMaterials.drywall
+                );
+                console.log(output);
+```
+
 
 <br/>
 <br/>

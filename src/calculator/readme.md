@@ -24,6 +24,16 @@ This function take number(inches) and return studs, plates and posts for one wal
 [Read More](../../doc/readme_commands/calcWallLumber.md)
 
 
+calcDrywall(widthInInches: number, lengthInInches: number)
+This function take number(widthInInches, lengthInInches) and return total number of draywall. 
+
+[Read More](../../doc/readme_commands/calcDrywall.md)
+
+
+
+
+
+
 
 
 

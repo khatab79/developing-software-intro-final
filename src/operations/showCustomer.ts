@@ -1,6 +1,7 @@
 export function outPut(name: string, width?: number, length?: number) {
     //display the parameters on the command line
-    const output = ` {
+    const output = ` 
+    {
         name: "${name}",
             "house": {
                 "width": ${width},

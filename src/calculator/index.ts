@@ -5,7 +5,7 @@
 // name   as string
 // and console.log to output the parameters passed.
 
-import { outPut } from "../operations/showCustomer";
+//import { number } from "yargs";
 
 const BEAM_WIDTH = 3.5;
 const BOARD_LENGTH = 8 * 12;
@@ -17,6 +17,16 @@ const FULL_BOARDS_IN_SECTION = Math.floor(
     BEAMS_REQUIRED_EVERY_INCHES / BOARD_LENGTH
 );
 const FULL_BOARD_SECTION_SIZE = FULL_BOARDS_IN_SECTION * BOARD_LENGTH;
+
+// The smallest wall he will build is 4 feet in length.
+const SMALL_WALL = 4;
+
+// The largest wall he will build is 60 feet in length.
+const LARGEST_WALL = 60;
+
+// 4x8 sheets of drywall
+const SHEET_DRYWALL_long = 8;
+const SHEET_DRYWALL_width = 4;
 
 export function calcHouseMaterials(
     name: string,
@@ -33,13 +43,11 @@ export function calcHouseMaterials(
     //calculate total purchase (woods required + waste)
     // Purchase =(calculation + waste);
 
-    //organise the output to meet the specification requirement,
-    //by parsing un object later
-    const output = outPut(name, width, length);
-
-    console.log(calcWallLumber(width), calcWallLumber(length));
-
-    return output;
+    return {
+        name,
+        width,
+        length,
+    };
 }
 // This function takes Parameter ==> name as string
 // and console.log to output the parameter passed.
@@ -50,9 +58,9 @@ export function getHouseMaterials(name: string) {
 
     //organise the output to meet the specification requirement,
     //by parsing un object later
-    const output = outPut(name, 0, 0);
+    const houseByName = name;
 
-    return output;
+    return houseByName;
 }
 
 // any number of inches past BEAMS_REQUIRED_EVERY_INCHES will return 1
@@ -164,4 +172,61 @@ export function calcWallLumber(inches: number) {
         studs,
         posts,
     };
+}
+//convert feet to inches
+function convertFeetToInches(feet: number) {
+    return feet * 12;
+}
+
+//convert feet to inches
+function convertInchesToFeet(inches: number) {
+    return inches / 12;
+}
+
+// takes width and length as parameters
+// and returns the number of sheets of plywood for a house
+// He needs enough drywall to completely cover the interior walls of the house,
+// and the ceiling
+// The smallest wall he will build is 4 feet in length.
+// The largest wall he will build is 60 feet in length.
+// 4x8 sheets of drywall
+export function calcDrywall(widthInInches: number, lengthInInches: number) {
+    
+    //calculate drywall for the interiorWall (2 sides)
+    const draywallForInteriorWall =
+        (widthInInches - BEAM_WIDTH * 2) /
+            convertFeetToInches(SHEET_DRYWALL_width) 
+      + (lengthInInches - BEAM_WIDTH * 2) /
+            convertFeetToInches(SHEET_DRYWALL_width);
+
+    //calculate drywall for ceiling 2* (Width + Length), consider rectangle
+    const draywallForCeiling =
+        2 * (widthInInches + lengthInInches) /
+        convertFeetToInches(SHEET_DRYWALL_width * SHEET_DRYWALL_long);
+
+    // return calculation
+    return Math.ceil(2 * draywallForInteriorWall + draywallForCeiling);
+}
+
+//calculate the inside area of the wall (inches^2)
+function getInsideWallArea(widthInInches: number, lengthInInches: number) {
+    return (
+        2 *
+        convertFeetToInches(SHEET_DRYWALL_long) *
+        (widthInInches + lengthInInches - BEAM_WIDTH * 2)
+    );
+}
+
+//calculate the ceiling area of the wall (inches^2)
+function getCeilingArea(widthInInches: number, lengthInInches: number) {
+    return widthInInches + lengthInInches;
+}
+
+//calculate the outside area of the wall (inches^2)
+function getOutsideWallArea(widthInInches: number, lengthInInches: number) {
+    return (
+        2 *
+        convertFeetToInches(SHEET_DRYWALL_long) *
+        (widthInInches + lengthInInches)
+    );
 }

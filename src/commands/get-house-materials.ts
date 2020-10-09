@@ -1,5 +1,6 @@
 import { Arguments, Argv } from "yargs";
 import { getHouseMaterials } from "../calculator/index";
+import { outPut } from "../operations/showCustomer";
 
 export function getMaterials(yargs: Argv): void {
     // create a new yargs "command"
@@ -28,7 +29,11 @@ export function getMaterials(yargs: Argv): void {
             try {
                 //get our customer's house material by name
                 const houseMaterials = getHouseMaterials(args.name);
-                console.log(houseMaterials);
+                //organise the output to meet the specification requirement,
+                //by parsing un object later
+
+                const output = outPut(houseMaterials, 0, 0);
+                console.log(output);
             } catch (error) {
                 console.error("error");
             }

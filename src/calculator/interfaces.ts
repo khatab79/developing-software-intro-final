@@ -21,8 +21,8 @@ export interface IHouse {
 export interface IMaterials {
     // 2x4's (for studs and plates)
     // lumber
-    studs: number;
-    plates: number;
+    fourByFour: number;
+    twoByFour: number;
 
     // Plywood (for exterior of house)
     plywood: number;

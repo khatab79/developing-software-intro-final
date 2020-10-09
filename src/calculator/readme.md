@@ -31,9 +31,17 @@ This function take number(widthInInches, lengthInInches) and return total number
 
 
 calcPlywood(widthInInches: number, lengthInInches: number)
-This function take number(widthInInches, lengthInInches) and return total number of calcPlywood. 
+This function take number(widthInInches, lengthInInches) and return total number of Plywood. 
 
-[Read More](../../doc/readme_commands/calcPlywood.md)
+[Read More](../../doc/readme_commands/calcPlywood.md)calcPlywood(widthInInches: number, lengthInInches: number)
+
+calcMaterials(widthInInches: number, lengthInInches: number)
+This function take number(widthInInches, lengthInInches) and return total number of Materials. 
+
+[Read More](../../doc/readme_commands/calcMaterials.md)
+
+
+
 
 
 

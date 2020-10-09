@@ -60,12 +60,13 @@ export function calcMaterials(yargs: Argv): void {
                 //organise the output to meet the specification requirement,
                 //by parsing un object later
 
-                const output = outPut(
-                    houseMaterials.name,
-                    houseMaterials.width,
-                    houseMaterials.length
-                );
-                console.log(output);
+                // const output = outPut(
+                //     args.name,
+                //     args.width,
+                //     args.length,
+                // );
+                // console.log(output);
+                console.log(houseMaterials);
             } catch (error) {
                 console.error("error");
             }

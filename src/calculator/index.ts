@@ -5,7 +5,9 @@
 // name   as string
 // and console.log to output the parameters passed.
 
-//import { number } from "yargs";
+import { number } from "yargs";
+
+import { Materials } from "../module/class-materials";
 
 const BEAM_WIDTH = 3.5;
 const BOARD_LENGTH = 8 * 12;
@@ -38,8 +40,12 @@ export function calcHouseMaterials(
     length: number,
     units: boolean
 ) {
-    //create a customer with minimum requirement (name and two dimensions) feet or inches
-
+    //to default the wall length parameters to inches
+    //but have an option to insert feet
+    if (units) {
+        width = convertFeetToInches(width);
+        length = convertFeetToInches(length);
+    }
     //add the calculation to customer
 
     //calculate waste
@@ -47,13 +53,9 @@ export function calcHouseMaterials(
     //calculate total purchase (woods required + waste)
     // Purchase =(calculation + waste);
 
+    const materials = calcMaterials(width, length);
 
-
-    return {
-        name,
-        width,
-        length,
-    };
+    return materials;
 }
 // This function takes Parameter ==> name as string
 // and console.log to output the parameter passed.
@@ -189,14 +191,55 @@ function convertInchesToFeet(inches: number) {
     return inches / 12;
 }
 
+// takes the following parameters:
+// width
+// length
+// calcWallLumber function --- plates, studs, and posts
+// calcDrywall function    --- drywall
+// calcPlywood function    --- plywood
+// return the results in the format specified for the materials section of the interface
+export function calcMaterials(widthInInches: number, lengthInInches: number) {
+    const plates =
+        calcWallLumber(widthInInches).plates +
+        calcWallLumber(lengthInInches).plates;
+    const studs =
+        2 *
+        (calcWallLumber(widthInInches).studs +
+            calcWallLumber(lengthInInches).studs);
+    const twoByFour = plates + studs;
+
+    const fourByFour =
+        4 +
+        calcWallLumber(widthInInches).posts +
+        calcWallLumber(widthInInches).posts;
+
+    const drywall = calcDrywall(widthInInches, lengthInInches);
+    const plywood = calcPlywood(widthInInches, lengthInInches);
+
+    const materials: Materials = new Materials(
+        twoByFour,
+        fourByFour,
+        plywood,
+        drywall
+    );
+
+    return materials;
+
+    // calcWallLumber:( widthInInches: number) => number,
+    // calcDrywall:( widthInInches: number, lengthInInches: number)=> number,
+    // calcPlywood:( widthInInches: number, lengthInInches: number)=> number )
+}
+
 //this function takes width and length as parameters
 //and returns the number of sheets of plywood for a house
 //plywood to completely cover the exterior walls of the house.
 // 4x8 foot sheets of plywood
 export function calcPlywood(widthInInches: number, lengthInInches: number) {
     return Math.ceil(
-        2 * (widthInInches / convertFeetToInches(SHEET_PLYWOOD_width) +
-            lengthInInches / convertFeetToInches(SHEET_PLYWOOD_width)));
+        2 *
+            (widthInInches / convertFeetToInches(SHEET_PLYWOOD_width) +
+                lengthInInches / convertFeetToInches(SHEET_PLYWOOD_width))
+    );
 }
 
 // takes width and length as parameters

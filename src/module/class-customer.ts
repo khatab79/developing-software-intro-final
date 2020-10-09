@@ -11,17 +11,17 @@ export class Customer implements ICustomer {
     length: number;
 
     // out side wall area
-    outsideWallArea?: number;
+    outsideWallArea: number;
 
     // inside wall area
-    insideWallArea?: number;
+    insideWallArea: number;
 
     // ceiling area
-    ceilingArea?: number;
+    ceilingArea: number;
 
     // 2x4's (for studs and plates)
-    studs: number;
-    plates: number;
+    twoByFour: number;
+    fourByFour: number;
 
     // Plywood (for exterior of house)
     plywood: number;
@@ -29,9 +29,23 @@ export class Customer implements ICustomer {
     // Drywall (for interior of house)
     drywall: number;
 
-    constructor(name: string, width: number, length: number) {
-        this.name = name;
-        this.width = width;
-        this.length = length;
-    }
+    // 2x4's (for studs and plates)
+    twoByFourWaste: number;
+    fourByFourWaste: number;
+
+    // Plywood (for exterior of house)
+    plywoodWaste: number;
+
+    // Drywall (for interior of house)
+    drywallWaste: number;
+
+    // 2x4's (for studs and plates)
+    twoByFourPurchase: number;
+    fourByFourPurchase: number;
+
+    // Plywood (for exterior of house)
+    plywoodPurchase: number;
+
+    // Drywall (for interior of house)
+    drywallPurchase: number;
 }

@@ -10,6 +10,8 @@
 import { Materials } from "../module/class-materials";
 import { Waste } from "../module/class-waste";
 import { Purchase } from "../module/class-purchase";
+import { IHouse } from "./interfaces";
+import { House } from "../module/class-house";
 
 const WASTE_MULTIPLIER = 0.1;
 
@@ -50,6 +52,20 @@ export function calcHouseMaterials(
         width = convertFeetToInches(width);
         length = convertFeetToInches(length);
     }
+
+    // create house
+    const outsideWALLArea = getOutsideWallArea(width, length);
+    const insideWallArea = getInsideWallArea(width, length);
+    const ceilingArea = getCeilingArea(width, length);
+
+    const house: IHouse = new House(
+        name,
+        width,
+        length,
+        outsideWALLArea,
+        insideWallArea,
+        ceilingArea
+    );
     //add the calculation to customer
 
     //calculate waste
@@ -59,7 +75,10 @@ export function calcHouseMaterials(
 
     const materials = calcMaterials(width, length);
 
-    return materials;
+    return {
+        materials,
+        house,
+    };
 }
 // This function takes Parameter ==> name as string
 // and console.log to output the parameter passed.

@@ -4,6 +4,8 @@ import { calcHouseMaterials } from "../calculator/index";
 import { outPutMaterials } from "../operations/showMaterials";
 import { outPutWaste } from "../operations/showWaste";
 import { outPutPurchase } from "../operations/showPurchase";
+import { outPutHouse } from "../operations/showHouse";
+import { Customer } from "../module/class-customer";
 
 export function calcMaterials(yargs: Argv): void {
     // create a new yargs "command"
@@ -59,24 +61,31 @@ export function calcMaterials(yargs: Argv): void {
                     args.isFeet
                 );
 
+                const outputHouse = outPutHouse(houseMaterials.house);
+                console.log(outputHouse);
+
                 const outputMaterials = outPutMaterials(
-                    houseMaterials.materials
+                    houseMaterials.materials.materials
                 );
                 console.log(outputMaterials);
 
-                const outputWaste = outPutWaste(houseMaterials.waste);
+                const outputWaste = outPutWaste(houseMaterials.materials.waste);
                 console.log(outputWaste);
 
-                const outputPurchase = outPutPurchase(houseMaterials.purchase);
+                const outputPurchase = outPutPurchase(
+                    houseMaterials.materials.purchase
+                );
                 console.log(outputPurchase);
+
+                // const customer :Customer = new (houseMaterials.house,
+                //                                 houseMaterials.materials.materials,
+                //                                 houseMaterials.materials.waste,
+                //                                 houseMaterials.materials.purchase )
+                //     )
+                // Customer.save;
             } catch (error) {
                 console.error("error");
             }
         }
     );
 }
-
-// houseMaterials.materials.twoByFour,
-//                     houseMaterials.materials.fourByFour,
-//                     houseMaterials.materials.plywood,
-//                     houseMaterials.materials.drywall

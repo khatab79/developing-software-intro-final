@@ -5,9 +5,12 @@
 // name   as string
 // and console.log to output the parameters passed.
 
-import { number } from "yargs";
+// import { number } from "yargs";
 
 import { Materials } from "../module/class-materials";
+import { Waste } from "../module/class-waste";
+
+const WASTE_MULTIPLIER = 0.1;
 
 const BEAM_WIDTH = 3.5;
 const BOARD_LENGTH = 8 * 12;
@@ -191,6 +194,11 @@ function convertInchesToFeet(inches: number) {
     return inches / 12;
 }
 
+export function calcWaste(items: number): number {
+    const waste = Math.ceil(items * WASTE_MULTIPLIER);
+    return waste;
+}
+
 // takes the following parameters:
 // width
 // length
@@ -206,6 +214,7 @@ export function calcMaterials(widthInInches: number, lengthInInches: number) {
         2 *
         (calcWallLumber(widthInInches).studs +
             calcWallLumber(lengthInInches).studs);
+
     const twoByFour = plates + studs;
 
     const fourByFour =
@@ -223,7 +232,13 @@ export function calcMaterials(widthInInches: number, lengthInInches: number) {
         drywall
     );
 
-    return materials;
+    //get waste by calculation
+    const waste: Waste = new Waste(materials);
+
+    return {
+        materials,
+        waste,
+    };
 
     // calcWallLumber:( widthInInches: number) => number,
     // calcDrywall:( widthInInches: number, lengthInInches: number)=> number,

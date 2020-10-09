@@ -41,6 +41,12 @@ This function take number(widthInInches, lengthInInches) and return total number
 [Read More](../../doc/readme_commands/calcMaterials.md)
 
 
+calcWaste(item: number)
+This function take number(item) and return total return . 
+
+[Read More](../../doc/readme_commands/calcWaste.md)
+
+
 
 
 

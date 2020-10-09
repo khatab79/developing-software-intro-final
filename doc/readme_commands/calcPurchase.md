@@ -1,3 +1,27 @@
+[Return to Software Instructions](../software-instructions.md) 
+
+[Return to list](../../src/calculator/readme.md) 
+
+## Usage
+takes materials and waste as parameters
+and returns purchasr (2x4, 4x4 plywood, drywall) 
+
+
+and return wood calculation
+
+## Code of the function: 
+
+```javascript
+// this takes the result of the calcMaterials and calcWaste functions
+// and results in the format specified for the purchase section of the interface
+export function calcPurchase(materials: number, waste: number) {
+    return materials + waste;
+}
+```
+
+## test
+
+```Javascript
 import { IPurchase } from "../calculator/interfaces";
 
 import { Materials } from "../module/class-materials";
@@ -23,3 +47,12 @@ export class Purchase implements IPurchase {
         this.drywall = calcPurchase(materials.drywall, waste.drywall);
     }
 }
+
+```
+
+
+
+<br/>
+<br/>
+
+[Return to Software Instructions](../software-instructions.md) 

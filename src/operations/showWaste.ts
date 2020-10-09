@@ -3,7 +3,7 @@ import { Waste } from "../module/class-waste";
 export function outPutWaste(waste: Waste) {
     //display the parameters on the command line
     const output = ` 
-            waste": {
+            "waste": {
                 "lumber": {
                     "2x4": ${waste.twoByFour},
                     "4x4": ${waste.fourByFour}

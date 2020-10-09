@@ -47,6 +47,11 @@ This function take number(item) and return total return .
 [Read More](../../doc/readme_commands/calcWaste.md)
 
 
+calcWaste(item: number)
+This function take number(item) and return total return . 
+
+[Read More](../../doc/readme_commands/calcPurchase.md)
+
 
 
 

@@ -9,6 +9,7 @@
 
 import { Materials } from "../module/class-materials";
 import { Waste } from "../module/class-waste";
+import { Purchase } from "../module/class-purchase";
 
 const WASTE_MULTIPLIER = 0.1;
 
@@ -162,6 +163,11 @@ function getStudsInLength(inches: number) {
     const perfectWidthExtension = isNotPerfectWidth * -1 + 1;
     return studs + perfectWidthExtension;
 }
+// this takes the result of the calcMaterials and calcWaste functions
+// and results in the format specified for the purchase section of the interface
+export function calcPurchase(materials: number, waste: number) {
+    return materials + waste;
+}
 
 //function calcWallLumber takes inches as a parameter
 //and returns the number of plates, studs, and posts required for a single wall
@@ -235,9 +241,12 @@ export function calcMaterials(widthInInches: number, lengthInInches: number) {
     //get waste by calculation
     const waste: Waste = new Waste(materials);
 
+    //calculate purchase
+    const purchase: Purchase = new Purchase(materials, waste);
     return {
         materials,
         waste,
+        purchase,
     };
 
     // calcWallLumber:( widthInInches: number) => number,

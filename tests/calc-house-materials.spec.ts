@@ -119,6 +119,28 @@ describe("calc house materials", () => {
                 .materials.plywood;
             const output = 103;
             expect(output).to.equal(result);
+
+            // tests for purchase
+            it("17. Should return purchase of drywall ", () => {
+                const result = calcHouseMaterials("khatab", 103, 103, false)
+                    .purchase.drywall;
+                const output = 10;
+                expect(output).to.equal(result);
+            });
+
+            it("18. Should return purchase of plywood", () => {
+                const result = calcHouseMaterials("khatab", 103, 103, false)
+                    .purchase.plywood;
+                const output = 9;
+                expect(output).to.equal(result);
+            });
+
+            it("19. Should return  purchase of plywood ", () => {
+                const result = calcHouseMaterials("khatab", 103, 103, true)
+                    .purchase.twoByFour;
+                const output = 44;
+                expect(output).to.equal(result);
+            });
         });
     });
 });

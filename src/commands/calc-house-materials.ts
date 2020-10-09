@@ -3,6 +3,7 @@ import { Arguments, Argv } from "yargs";
 import { calcHouseMaterials } from "../calculator/index";
 import { outPutMaterials } from "../operations/showMaterials";
 import { outPutWaste } from "../operations/showWaste";
+import { outPutPurchase } from "../operations/showPurchase";
 
 export function calcMaterials(yargs: Argv): void {
     // create a new yargs "command"
@@ -65,6 +66,9 @@ export function calcMaterials(yargs: Argv): void {
 
                 const outputWaste = outPutWaste(houseMaterials.waste);
                 console.log(outputWaste);
+
+                const outputPurchase = outPutPurchase(houseMaterials.purchase);
+                console.log(outputPurchase);
             } catch (error) {
                 console.error("error");
             }

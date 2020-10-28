@@ -583,38 +583,38 @@ This function take string(name) and return output.
 ## calcWallLumber(inches: number)
 This function take number(inches) and return studs, plates and posts for one wall. 
 
-[Read More](./calculator/calcWallLumber.md)
+[Read More](./src/calculator/calcWallLumber.md)
 
 
 ## calcDrywall(widthInInches: number, lengthInInches: number)
 This function take number(widthInInches, lengthInInches) and return total number of draywall. 
 
-[Read More](././calculator/calcDrywall.md)
+[Read More](./src/calculator/calcDrywall.md)
 
 
 ## calcPlywood(widthInInches: number, lengthInInches: number)
 This function take number(widthInInches, lengthInInches) and return total number of Plywood. 
 
-[Read More](./calculator/calcPlywood.md)
+[Read More](./src/calculator/calcPlywood.md)
 
 calcPlywood(widthInInches: number, lengthInInches: number)
 
 ## calcMaterials(widthInInches: number, lengthInInches: number)
 This function take number(widthInInches, lengthInInches) and return total number of Materials. 
 
-[Read More](./calculator/calcMaterials.md)
+[Read More](./src/calculator/calcMaterials.md)
 
 
 ## calcWaste(item: number)
 This function take number(item) and return total return. 
 
-[Read More](./calculator/calcWaste.md)
+[Read More](./src/calculator/calcWaste.md)
 
 
 ## calcWaste(item: number)
 This function take number(item) and return total return. 
 
-[Read More](./calculator/calcPurchase.md)
+[Read More](./src/calculator/calcPurchase.md)
 
 
 

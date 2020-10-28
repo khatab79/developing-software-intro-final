@@ -1,6 +1,4 @@
-[Return to Software Instructions](../software-instructions.md) 
-
-[Return to list](../../src/calculator/readme.md) 
+[Return to list](./readme.md) 
 
 ## Usage
 calcWallLumber that takes inches as a parameter and
@@ -62,12 +60,3 @@ export function calcWallLumber(inches: number) {
             });
         });
     });
-
-```
-
-
-
-<br/>
-<br/>
-
-[Return to Software Instructions](../software-instructions.md) 

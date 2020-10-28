@@ -1,6 +1,4 @@
-[Return to Software Instructions](../software-instructions.md) 
-
-[Return to list](../../src/calculator/readme.md) 
+[Return to list](./readme.md) 
 
 ## Usage
 takes materials and waste as parameters
@@ -47,12 +45,3 @@ export class Purchase implements IPurchase {
         this.drywall = calcPurchase(materials.drywall, waste.drywall);
     }
 }
-
-```
-
-
-
-<br/>
-<br/>
-
-[Return to Software Instructions](../software-instructions.md) 

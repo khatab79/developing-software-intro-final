@@ -1,6 +1,4 @@
-[Return to Software Instructions](../software-instructions.md) 
-
-[Return to list](../../src/calculator/readme.md) 
+[Return to list](./readme.md) 
 
 ## Usage
 takes a number as parameters
@@ -111,11 +109,3 @@ for calcHouseMaterials function
             const output = 103;
             expect(output).to.equal(result);
         });
-
-```
-
-
-<br/>
-<br/>
-
-[Return to Software Instructions](../software-instructions.md) 

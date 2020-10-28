@@ -1,7 +1,4 @@
-
-[Return to Software Instructions](../software-instructions.md) 
-
-[Return to list](../../src/calculator/readme.md) 
+[Return](../../README.md) 
 
 ## Usage
 This function takes Parameters ==> 
@@ -227,5 +224,3 @@ the output still not final version.
 
 <br/>
 <br/>
-
-[Return to Software Instructions](../software-instructions.md) 

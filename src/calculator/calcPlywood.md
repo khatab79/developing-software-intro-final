@@ -1,6 +1,4 @@
-[Return to Software Instructions](../software-instructions.md) 
-
-[Return to list](../../src/calculator/readme.md) 
+[Return to list](./readme.md) 
 
 ## Usage
 takes width and length as parameters
@@ -49,12 +47,3 @@ describe("Calculator", () => {
         });
     });
 });
-
-```
-
-
-
-<br/>
-<br/>
-
-[Return to Software Instructions](../software-instructions.md) 

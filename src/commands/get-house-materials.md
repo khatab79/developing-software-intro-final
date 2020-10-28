@@ -1,6 +1,4 @@
-[Return to Software Instructions](../software-instructions.md) 
-
-[Return to list](../../src/calculator/readme.md) 
+[Return](../../README.md) 
 
 
 
@@ -59,5 +57,3 @@ npm run start:dev:notest -- get-house-materials -name Gerald
 
 <br/>
 <br/>
-
-[Return to Software Instructions](../software-instructions.md) 

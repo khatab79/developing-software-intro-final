@@ -45,3 +45,4 @@ export class Purchase implements IPurchase {
         this.drywall = calcPurchase(materials.drywall, waste.drywall);
     }
 }
+```

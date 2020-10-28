@@ -109,3 +109,4 @@ for calcHouseMaterials function
             const output = 103;
             expect(output).to.equal(result);
         });
+```

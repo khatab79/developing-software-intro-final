@@ -1,5 +1,4 @@
-[Return](../../README.md) 
-
+[Return](./readme.md) 
 
 
 ## Usage
@@ -52,8 +51,3 @@ npm run start:dev:notest -- get-house-materials -n Gerald
 ```
 npm run start:dev:notest -- get-house-materials -name Gerald 
 ```
-## output
-`Gerald`
-
-<br/>
-<br/>

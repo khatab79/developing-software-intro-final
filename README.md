@@ -606,23 +606,17 @@ This function take number(widthInInches, lengthInInches) and return total number
 
 
 ## calcWaste(item: number)
-This function take number(item) and return total return . 
+This function take number(item) and return total return. 
 
 [Read More](./calculator/calcWaste.md)
 
 
 ## calcWaste(item: number)
-This function take number(item) and return total return . 
+This function take number(item) and return total return. 
 
 [Read More](./calculator/calcPurchase.md)
 
 
-
-<br/>
-
---- 
-
-<br/>
 
 [Gerald_Img]: https://www.safetyandhealthmagazine.com/ext/resources/images/2016/04-april/construction-safety.jpg?1458739490
 
